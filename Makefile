@@ -1,16 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall
 
 # Règle pour compiler le projet
-build: calculator.c
-    $(CC) $(CFLAGS) -o calculator calculator.c
+build: ./calculator.c
+	$(CC) $(CFLAGS) -o ./calculator ./calculator.c
 
-# Règle pour exécuter les tests
-test: calculator
-    ./calculator
 
-# Règle pour nettoyer les fichiers générés
-clean:
-    rm -f calculator
+test: ./calculator
+	./calculator
 
-.PHONY: build test clean
+
+clean: ./calculator
+	rm -f ./calculator
